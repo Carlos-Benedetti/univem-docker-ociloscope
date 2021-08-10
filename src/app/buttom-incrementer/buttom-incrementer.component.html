@@ -1,0 +1,5 @@
+<div class="d-flex">
+    <button class="dec" (click)="decrement()">-</button>
+    <input  class="input" #valueField value="{{value}}" [min]="min" [max]="max" type="number">
+    <button class="inc" (click)="increment()">+</button>
+</div>

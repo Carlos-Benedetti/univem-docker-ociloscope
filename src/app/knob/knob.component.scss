@@ -1,0 +1,18 @@
+#center {
+    position: relative;
+    width: 100px;
+    height: 115px;
+    background-size:contain ;
+    background-image: url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/knob-bg.png);
+}
+
+.knob {
+    position: absolute;
+    top: 42.4px;
+    left: 25.9px;
+    width: 47px;
+    height: 46.5px;
+    background-size:contain ;
+    background-image: url(https://raw.githubusercontent.com/oscicen/oscicen.github.io/master/img/knob.png);
+    z-index: 1;
+}

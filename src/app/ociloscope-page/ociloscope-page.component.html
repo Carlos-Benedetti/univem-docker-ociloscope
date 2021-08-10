@@ -1,0 +1,54 @@
+<div class="body container-fluid vh-100">
+    <div>
+        <mat-form-field appearance="fill" class="w-100">
+            <mat-label>Audio Inout</mat-label>
+            <mat-select #deviceSelect placeholder="">
+                <mat-option *ngFor="let device of devices; let i = index" [value]="device">
+                    {{device.label || 'Microphone '+i}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <app-ociloscope-canvas #ociloscopeCanvas></app-ociloscope-canvas>
+    <div class="card p-0 bg-dark text-white" *ngIf="mediaStream">
+        <div class="card-header">
+            <p>Hack</p>
+            <div class=" text-center w-100">
+                <label>Playback: </label>
+                <input type="checkbox" value="false" (change)="changePlayback($event)">
+            </div>
+            <div class=" text-center w-100">
+                <label>Echo cancellation: </label>
+                <input type="checkbox" value="false" (change)="changeEcho($event)">
+            </div>
+            <div class=" text-center w-100">
+                <label>Noise suppression: </label>
+                <input type="checkbox" value="false" (change)="changeNoise($event)">
+            </div>
+            <div class="row w-100 p-0">
+                <div class="col">
+                    <div class="card bg-dark  text-white text-center">
+                        <div class="card-title">GAIN</div>
+                        <div class="card-body p-0">
+                            <app-buttom-incrementer (valueChange)="changeGain($event)" class="w-100" min="0" max="100"
+                                value="1"></app-buttom-incrementer>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card bg-dark text-white text-center">
+                        <div class="card-title">Intencity</div>
+                        <div class="card-body p-0">
+                            <app-buttom-incrementer (valueChange)="changeIntencity($event)" class="w-100" min="0"
+                                max="100" value="1"></app-buttom-incrementer>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+        </div>
+    </div>
+
+</div>
